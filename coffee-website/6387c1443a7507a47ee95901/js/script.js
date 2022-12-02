@@ -91,6 +91,16 @@ document.addEventListener('mousedown', function (e) {
 // Set up a custom mouseup event handler for letting go
 // of the mouse inside the box or when mouse leaves the box.
 function mouseDone(evt) {
+  const promise = audio.play();
+  if (promise !== undefined) {
+    promise
+      .then(() => {
+        return;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   //clearInterval(timer); // Cancel the previously initiated timer function
   if (clickCount <= 1) {
     console.log(videoContainers[clickCount - 1]);
