@@ -1,0 +1,116 @@
+body{
+    background: black !important;
+}
+.hidden{
+    display: none;
+    transition: all .9s;
+}
+
+
+.visible-now{
+    display: block;
+}
+.text-block-2{
+    transition: all .2s;
+    transition-delay: 3s;
+}
+.picture-container.visible-now .cold-brew .text-block-2{
+    position: relative;
+    bottom: 70px; 
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:.8s;
+}
+
+.picture-container.visible-now .arctic .text-block-2{
+    position: relative; 
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:.8s;
+}
+.picture-container.visible-now .woodroasted .text-block-2{
+    position: relative; 
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn2 ease-in .8;
+    animation-fill-mode:forwards;
+    animation-duration:1.4s;
+}
+
+.video-container .video{
+    opacity: 0;
+}
+.video-container.visible-now .video{
+    animation:fadeIn2 ease-in .5;
+    animation-fill-mode:forwards;
+    animation-duration:.5s;   
+
+}
+
+video{
+    height: auto;
+    width: 100% !important;
+}
+
+@keyframes fadeIn { 
+    from { 
+        opacity:0;
+        transform: translateY(30%);
+
+
+} to { opacity:1; transform: translateY(0); } }
+
+@keyframes fadeIn2 { 
+    from { 
+        opacity:0;
+
+
+} to { opacity:1; } }
+
+
+/*** Cursor STYLE ***/
+
+.cursor{
+    z-index: 999;
+    background-color: #FFDCA9;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    box-shadow: 0 0 20px #FFDCA9
+                0 0 60px #FFDCA9
+                0 0 100px #FFDCA9;
+    position: fixed;
+    animation: colors 5s infinite;
+    font-size: .75rem;
+    margin: auto;
+    cursor:pointer;
+
+}
+
+.cursor p{
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+@keyframes colors {
+    0%{
+        filter: hue-rotate(0deg);
+    }100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.cursor:before{
+    content: '';
+    position: absolute;
+    background: #FFDCA9;
+    width: 120px;
+    height: 120px;
+    opacity:0.2;
+    transform: translate(-18%, -18%);
+    border-radius: 50%;
+
+
+}
