@@ -16,8 +16,12 @@
 // reset the clickCount
 // add visibility to the current pictureContainer using the current clickCount number
 
-const audio = new Audio();
-audio.src = '../sound/click.mp3';
+const audio = document.createElement('audio');
+const source = document.createElement('source');
+audio.appendChild(source);
+source.setAttribute('src', '../sound/click.mp3');
+source.setAttribute('type', 'audio/mpeg');
+audio.setAttribute('controls', 'controls');
 
 const cursor = document.querySelector('.cursor');
 const cursorText = document.querySelector('.cursor-text');
