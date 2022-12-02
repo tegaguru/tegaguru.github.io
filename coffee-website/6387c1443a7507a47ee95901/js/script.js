@@ -19,10 +19,7 @@
 const audio = document.createElement('audio');
 const source = document.createElement('source');
 audio.appendChild(source);
-source.setAttribute(
-  'src',
-  'https://tegaguru.github.io/coffee-website/sound/click.mp3'
-);
+source.setAttribute('src', './../../sound/click.mp3');
 source.setAttribute('type', 'audio/mpeg');
 audio.setAttribute('controls', 'controls');
 
