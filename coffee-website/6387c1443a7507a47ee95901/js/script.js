@@ -65,7 +65,21 @@ function mouseDown() {
 // });
 
 document.addEventListener('mousedown', function (e) {
-  audio.play();
+  const promise = audio.play();
+  if (promise !== undefined) {
+    promise
+      .then(() => {
+        return;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  // audio.play()
+  //   .then(()=>{return;})
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
   cursorText.innerHTML = 'KEEP <br> HOLDING';
   isDown = true; // button status (any button here)
   isLong = false; // longpress status reset
