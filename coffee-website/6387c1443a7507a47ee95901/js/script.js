@@ -19,7 +19,7 @@
 const audio = document.createElement('audio');
 const source = document.createElement('source');
 audio.appendChild(source);
-source.setAttribute('src', './../../sound/click.mp3');
+source.setAttribute('src', '/../../sound/click.mp3');
 source.setAttribute('type', 'audio/mpeg');
 audio.setAttribute('controls', 'controls');
 
@@ -65,6 +65,7 @@ function mouseDown() {
 // });
 
 document.addEventListener('mousedown', function (e) {
+  audio.load();
   const promise = audio.play();
   if (promise !== undefined) {
     promise
